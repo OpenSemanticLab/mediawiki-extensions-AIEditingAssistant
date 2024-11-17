@@ -8,9 +8,9 @@ use Status;
 
 interface IProvider {
 	/**
-	 * @param string $connection
+	 * @param array $connection
 	 */
-	public function setConnectionData( string $connection );
+	public function setConnectionData( array $connection );
 
 	/**
 	 * @param string $command

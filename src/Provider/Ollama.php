@@ -35,8 +35,8 @@ class Ollama implements IProvider {
 	/**
 	 * @inheritDoc
 	 */
-	public function setConnectionData( string $connection ) {
-		$this->url = $connection;
+	public function setConnectionData( array $connection ) {
+		$this->url = $connection['url'];
 	}
 
 	/**

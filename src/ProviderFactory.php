@@ -45,11 +45,11 @@ class ProviderFactory {
 
 	/**
 	 * @param string $name
-	 * @param string $connection
+	 * @param array $connection
 	 *
 	 * @return IProvider
 	 */
-	public function getProvider( string $name, string $connection = '' ): Provider\IProvider {
+	public function getProvider( string $name, array $connection = null ): Provider\IProvider {
 		if ( !isset( $this->providers[$name] ) ) {
 			throw new InvalidArgumentException( "Provider $name not found" );
 		}

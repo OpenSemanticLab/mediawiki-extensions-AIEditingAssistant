@@ -35,8 +35,8 @@ class OpenAI implements IProvider {
 	/**
 	 * @inheritDoc
 	 */
-	public function setConnectionData( string $connection ) {
-		$this->secret = $connection;
+	public function setConnectionData( array $connection ) {
+		$this->secret = $connection[ 'secret' ];
 	}
 
 	/**

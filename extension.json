@@ -128,7 +128,7 @@
 			"description": "Active AI provider for the AI Editing Assistant. One of the keys of `AIEditingAssistantProviders` attribute"
 		},
 		"AIEditingAssistantActiveProviderConnection": {
-			"value": "",
+			"value": null,
 			"description": "Connection parameters"
 		}
 	},
