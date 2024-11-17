@@ -13,17 +13,17 @@ class OpenAI implements IProvider {
 	/**
 	 * @var HttpRequestFactory
 	 */
-	private $httpRequestFactory;
+	protected $httpRequestFactory;
 
 	/**
 	 * @var string
 	 */
-	private $secret;
+	protected $secret;
 
 	/**
 	 * @var Session
 	 */
-	private $session;
+	protected $session;
 
 	/**
 	 * @param HttpRequestFactory $httpRequestFactory
@@ -74,7 +74,7 @@ class OpenAI implements IProvider {
 	 * @param array $messages
 	 * @return Status
 	 */
-	private function getResponse( array $messages ): Status {
+	protected function getResponse( array $messages ): Status {
 		$req = $this->httpRequestFactory->create(
 			'https://api.openai.com/v1/chat/completions',
 			[ 'method' => 'POST', 'postData' => json_encode( [
@@ -103,7 +103,7 @@ class OpenAI implements IProvider {
 	 * @param string $text
 	 * @return array
 	 */
-	private function getInitializationMessage( string $text ): array {
+	protected function getInitializationMessage( string $text ): array {
 		$prompt = Message::newFromKey( 'aieditingassistant-initialization-command' )->params( $text )->plain();
 		return [ 'role' => 'system', 'content' => $prompt ];
 	}
@@ -111,7 +111,7 @@ class OpenAI implements IProvider {
 	/**
 	 * @return void
 	 */
-	private function assertSession() {
+	protected function assertSession() {
 		if ( !( $this->session instanceof Session ) ) {
 			throw new RuntimeException( 'Session not set' );
 		}

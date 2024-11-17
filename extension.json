@@ -36,6 +36,10 @@
 				"ollama": {
 					"class": "MediaWiki\\Extension\\AIEditingAssistant\\Provider\\Ollama",
 					"services": [ "HttpRequestFactory" ]
+				},
+				"azure": {
+					"class": "MediaWiki\\Extension\\AIEditingAssistant\\Provider\\Azure",
+					"services": [ "HttpRequestFactory" ]
 				}
 			}
 		},
